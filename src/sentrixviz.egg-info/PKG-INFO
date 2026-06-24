@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: sentrixviz
+Version: 0.1.0
+Summary: Topology-driven visualization SDK for the Sentrix stack (Phase 0/1: parquet playback + headless PNG).
+Requires-Python: >=3.11
+Requires-Dist: sentrix-contracts>=0.1.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: pyarrow>=14
+Requires-Dist: matplotlib>=3.7
+Provides-Extra: test
+Requires-Dist: pytest>=7; extra == "test"

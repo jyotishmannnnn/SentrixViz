@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "descriptor_version": "RobotFinger_v1",
+  "descriptor_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "device_class": "finger_module",
+  "body": { "kind": "ur5_gripper_finger", "notes": "synthetic non-glove revision; 5 taxels in a line, one cluster, no finger taxonomy. Proves topology/count independence with zero code change." },
+  "frame": { "origin": "finger_base", "axes": { "x": "lateral", "y": "base_to_tip", "z": "outward_normal" }, "units": "m" },
+  "modalities": ["magnetic"],
+  "neighborhood_graph": { "neighbor_radius_m": 0.009 },
+  "clusters": [
+    { "id": "pad", "members": ["t0", "t1", "t2", "t3", "t4"], "geometry": "grid",
+      "rasterization": { "grid": [1, 5], "plane": "outward" } }
+  ],
+  "regions": [
+    { "id": "pad_all", "members": ["t0", "t1", "t2", "t3", "t4"] }
+  ],
+  "sensors": [
+    { "sensor_id": "t0", "sensor_type": "BMM350", "modality": "magnetic", "channels": ["bx","by","bz"], "units": {"b":"uT"}, "bus": {"id":0,"kind":"i3c","address":"dynamic"}, "body_region": "pad", "finger": null, "segment": null, "position_m": [0.0, 0.000, 0.004], "cluster_id": "pad", "neighbors": ["t1"] },
+    { "sensor_id": "t1", "sensor_type": "BMM350", "modality": "magnetic", "channels": ["bx","by","bz"], "units": {"b":"uT"}, "bus": {"id":0,"kind":"i3c","address":"dynamic"}, "body_region": "pad", "finger": null, "segment": null, "position_m": [0.0, 0.008, 0.004], "cluster_id": "pad", "neighbors": ["t0","t2"] },
+    { "sensor_id": "t2", "sensor_type": "BMM350", "modality": "magnetic", "channels": ["bx","by","bz"], "units": {"b":"uT"}, "bus": {"id":0,"kind":"i3c","address":"dynamic"}, "body_region": "pad", "finger": null, "segment": null, "position_m": [0.0, 0.016, 0.004], "cluster_id": "pad", "neighbors": ["t1","t3"] },
+    { "sensor_id": "t3", "sensor_type": "BMM350", "modality": "magnetic", "channels": ["bx","by","bz"], "units": {"b":"uT"}, "bus": {"id":0,"kind":"i3c","address":"dynamic"}, "body_region": "pad", "finger": null, "segment": null, "position_m": [0.0, 0.024, 0.004], "cluster_id": "pad", "neighbors": ["t2","t4"] },
+    { "sensor_id": "t4", "sensor_type": "BMM350", "modality": "magnetic", "channels": ["bx","by","bz"], "units": {"b":"uT"}, "bus": {"id":0,"kind":"i3c","address":"dynamic"}, "body_region": "pad", "finger": null, "segment": null, "position_m": [0.0, 0.032, 0.004], "cluster_id": "pad", "neighbors": ["t3"] }
+  ]
+}
